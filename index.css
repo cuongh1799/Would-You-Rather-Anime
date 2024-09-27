@@ -71,9 +71,9 @@
 }
     
 .card-left .card-img{
-    max-width: 60%;
+    width: 70%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 3%;
     border: 1px solid black;
     margin-bottom: 10px;
 }
@@ -104,9 +104,9 @@
 }
     
 .card-right .card-right-img{
-    max-width: 60%;
+    width: 70%;
     height: auto;
-    border-radius: 50%;
+    border-radius: 3%;
     border: 1px solid black;
     margin-bottom: 10px;
 }

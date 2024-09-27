@@ -1,12 +1,43 @@
-function CardLeft(){
-    return(
-        <div className="card-left">
-            {/* <img className="card-img" src={pfp} alt="Twitch Chatter pfp"></img> */}
-            <h2 className='card-left-title'>Card Left</h2>
-            <p className='card-left-description'>Card Left Description</p>
-        </div>
-        
-    )
+import React, { useEffect, useState } from "react";
+import propTypes from "prop-types";
+import { GET_DATA } from "../Controllers/GET_DATA";
+
+function CardLeft(props) {
+  const [animeData, setAnimeData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await GET_DATA();
+      if (data) {
+        setAnimeData(data);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if(!animeData){
+    return <div>Loading....</div>
+  }
+
+  console.log(animeData);
+  return (
+    <div className="card-left">
+      <img
+        className="card-img"
+        src={animeData.data.images.webp.image_url} // Corrected property access
+        alt="Anime Image"
+      />
+      <h2 className="card-left-title">{animeData.data.title}</h2>
+      <p className="card-left-description">{animeData.data.background}</p>
+    </div>
+  );
 }
 
-export default CardLeft 
+CardLeft.propTypes = {
+  title: propTypes.string,
+  img: propTypes.string,
+  desc: propTypes.string,
+};
+
+export default CardLeft;
