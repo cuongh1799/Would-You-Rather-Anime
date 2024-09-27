@@ -1,5 +1,3 @@
-import '../CSS/Header-css.css'
-
 function Header(){
     return(
         <header className="header-bar">
