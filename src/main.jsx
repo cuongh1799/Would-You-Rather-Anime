@@ -5,7 +5,11 @@ import '../index.css'
 import CardLeft from './Components/CardLeft.jsx'
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
+  // UPDATE 28-9-2024, Disable strict mode because strict always render twice
+  // leading to the random animeData be called twice
+  // So when we run the app it change the anime for the first time, then  blink to second time
+  
+  // <StrictMode>
     <App />
-  </StrictMode>,
+  // </StrictMode>,
 )
