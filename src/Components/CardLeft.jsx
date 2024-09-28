@@ -4,15 +4,13 @@ import { GET_DATA } from "../Controllers/GET_DATA";
 
 function CardLeft(props) {
   const [animeData, setAnimeData] = useState(null);
-
+  const fetchData = async () => {
+    const data = await GET_DATA();
+    if (data) {
+      setAnimeData(data);
+    }
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      const data = await GET_DATA();
-      if (data) {
-        setAnimeData(data);
-      }
-    };
-
     fetchData();
   }, []);
 
@@ -25,7 +23,7 @@ function CardLeft(props) {
     <div className="card-left">
       <img
         className="card-img"
-        src={animeData.data.images.webp.image_url} // Corrected property access
+        src={animeData.data.images.webp.large_image_url} // Corrected property access
         alt="Anime Image"
       />
       <h2 className="card-left-title">{animeData.data.title}</h2>
