@@ -21,13 +21,21 @@ function CardLeft(props) {
   console.log(animeData);
   return (
     <div className="card-left">
-      <img
-        className="card-img"
-        src={animeData.data.images.webp.large_image_url} // Corrected property access
-        alt="Anime Image"
-      />
-      <h2 className="card-left-title">{animeData.data.title}</h2>
-      <p className="card-left-description">{animeData.data.background}</p>
+      <div className="card-left-wrapper-image">
+        <img
+          className="card-bg"
+          src={animeData.data.images.webp.large_image_url}
+        />
+      </div>
+      <div className="card-left-wrapper-info">
+        <img
+          className="card-img"
+          src={animeData.data.images.webp.large_image_url}
+          alt="Anime Image"
+        />
+        <h2 className="card-left-title">{animeData.data.title}</h2>
+        <p className="card-left-description">{animeData.data.background}</p>
+      </div>
     </div>
   );
 }
