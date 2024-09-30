@@ -1,49 +1,54 @@
 /* Card right */
-.card-right{
-    border: 1px solid black;
-    border-radius: 10px;
-    /* padding: 20px;
+.card-right {
+  border: 1px solid black;
+  border-radius: 10px;
+  /* padding: 20px;
     margin: 10px; */
-    text-align: center;
-    align-items: center;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
-    /* filter: blur(5px); */
-    /* filter: brightness(50%); */
-    /* background-color: rgb(243, 68, 68); */
+  text-align: center;
+  align-items: center;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  /* filter: blur(5px); */
+  /* filter: brightness(50%); */
+  /* background-color: rgb(243, 68, 68); */
 }
-.card-right .card-right-wrapper-image{
-    position: absolute;
-    width: 50%;
-    filter: brightness(50%);
-}
-
-.card-right .card-bg{
-    width: 100%;
-    height: auto
+.card-right .card-right-wrapper-image {
+  position: absolute;
+  width: 50%;
+  filter: brightness(50%);
 }
 
-.card-right .card-right-wrapper-info{
-    position: relative;
-    z-index: 1;
-}
-.card-right .card-img{
-    width: 20vw;
-    height: auto;
-    border-radius: 3%;
-    border: 1px solid black;
-    margin-bottom: 10px;
-}
-    
-.card-right .card-right-title{
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    color: rgb(255, 255, 255);
-}
-    
-.card-right .card-right-description{
-    color: rgb(74, 74, 74);
-    color: white
+.card-right .card-bg {
+  width: 50%;
+  height: auto;
 }
 
+.card-right .card-right-wrapper-info {
+  position: relative;
+  z-index: 1;
+  margin: 5em;
+}
+.card-right .card-img {
+  width: 20vw;
+  height: auto;
+  border-radius: 3%;
+  border: 1px solid black;
+  margin-bottom: 3em;
+}
+
+.card-right .card-right-title {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-size: 3rem;
+}
+
+.card-right .card-right-description {
+  color: rgb(74, 74, 74);
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
