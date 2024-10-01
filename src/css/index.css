@@ -33,25 +33,34 @@
 }
 
 .body{
-    padding-top: 3rem;
+    padding-top: 5rem;
     max-width: 100vw;
-    background-color: beige;
+    /* background-color: beige; */
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Left and Right body*/
-.left-body{
+.left-body , 
+.right-body{
     /* background-color: blue; */
     width: 50vw;
     height: 93vh;
     justify-content: center;
     justify-items: center;
+    transition: width 0.3s ease; /* Smooth width transition */
 }
 
-.right-body{
-    /* background-color: red; */
-    width: 50vw;
-    height: 93vh;
-    justify-content: center;
-    justify-items: center;
+/* Hover Effects */
+.hovered {
+    width: 60vw; /* Expanded width for hovered card */
+}
+
+.left-body:not(.hovered) {
+    width: 40vw; /* Shrink width for the non-hovered left card */
+}
+
+.right-body:not(.hovered) {
+    width: 40vw; /* Shrink width for the non-hovered right card */
 }

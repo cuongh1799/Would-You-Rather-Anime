@@ -5,12 +5,12 @@ import { GET_DATA } from "../Controllers/GET_DATA";
 function CardLeft(props) {
   return (
     <div className="card-left">
-      <div className="card-left-wrapper-image">
+      {/* <div className="card-left-wrapper-image">
         <img
           className="card-bg"
           src={props.img}
         />
-      </div>
+      </div> */}
       <div className="card-left-wrapper-info">
         <img
           className="card-img"
