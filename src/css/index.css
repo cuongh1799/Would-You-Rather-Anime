@@ -55,12 +55,15 @@
 /* Hover Effects */
 .hovered {
     width: 60vw; /* Expanded width for hovered card */
+    filter: brightness(100%);
 }
 
 .left-body:not(.hovered) {
     width: 40vw; /* Shrink width for the non-hovered left card */
+    filter: brightness(50%);
 }
 
 .right-body:not(.hovered) {
     width: 40vw; /* Shrink width for the non-hovered right card */
+    filter: brightness(50%);
 }
