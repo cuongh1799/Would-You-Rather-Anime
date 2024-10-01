@@ -25,6 +25,7 @@ function App() {
 
     const data1 = await GET_TOP_ANIME();
     const data2 = await GET_TOP_ANIME();
+    
     if (data1) {
       setAnimePopularityList1(data1);
       setAnimePopularityList2(data2);
