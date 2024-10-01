@@ -10,49 +10,75 @@ function App() {
   const [animeRightID, setAnimeRightID] = useState(null);
 
   // Full Anime List based on popularity
-  const [AnimePopularityList, setAnimePopularityList] = useState(null);
+  const [AnimePopularityList1, setAnimePopularityList1] = useState(null);
+  const [AnimePopularityList2, setAnimePopularityList2] = useState(null);
+
+  // Hover state
+  const [hoveredCard, setHoveredCard] = useState(null);
 
   // Loading state to wait for async function to finish
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   const fetchData = async () => {
     // Start Loading
-    setLoading(true); 
+    setLoading(true);
 
-    const data = await GET_TOP_ANIME(); 
-    if (data) {
-      setAnimePopularityList(data);
-      const randomIndex1 = Math.floor(Math.random() * data.length);
-      const randomIndex2 = Math.floor(Math.random() * data.length);
+    const data1 = await GET_TOP_ANIME();
+    const data2 = await GET_TOP_ANIME();
+    if (data1) {
+      setAnimePopularityList1(data1);
+      setAnimePopularityList2(data2);
+      const randomIndex1 = Math.floor(Math.random() * data1.length);
+      const randomIndex2 = Math.floor(Math.random() * data2.length);
 
       // Set Anime ID
-      setAnimeLeftID(data[randomIndex1]);
-      setAnimeRightID(data[randomIndex2])
+      setAnimeLeftID(data1[randomIndex1]);
+      setAnimeRightID(data2[randomIndex2]);
     } else {
       console.log("Error fetching data");
-    } 
+    }
 
     // End Loading
-    setLoading(false); 
+    setLoading(false);
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  if (loading) { // Step 3: Conditional rendering
-    return <div>Loading...</div>; // Or any loading indicator you prefer
+  if (loading) {
+    return <div>Loading...</div>;
   }
 
   return (
     <>
       <Header />
       <div className="body">
-        <span className="left-body">
-          <CardLeft title={animeLeftID.title} img={animeLeftID.images.webp.large_image_url} />
+        {/* Basically, when the cursor enters the body area, it sets hoveredCard 
+        to either left or right 
+
+        Then the ${hoveredCard === "left" ? "hovered" : ""} will check if its right or left
+        hence apply the .hovered class to it */}
+        
+        <span
+          className={`left-body ${hoveredCard === "left" ? "hovered" : ""}`}
+          onMouseEnter={() => setHoveredCard("left")}
+          onMouseLeave={() => setHoveredCard(null)}
+        >
+          <CardLeft
+            title={animeLeftID.title}
+            img={animeLeftID.images.webp.large_image_url}
+          />
         </span>
-        <span className="right-body">
-        <CardLeft title={animeRightID.title} img={animeRightID.images.webp.large_image_url} />
+        <span
+          className={`right-body ${hoveredCard === "right" ? "hovered" : ""}`}
+          onMouseEnter={() => setHoveredCard("right")}
+          onMouseLeave={() => setHoveredCard(null)}
+        >
+          <CardRight
+            title={animeRightID.title}
+            img={animeRightID.images.webp.large_image_url}
+          />
         </span>
       </div>
     </>
