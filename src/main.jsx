@@ -2,9 +2,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './css/index.css'
-import "./css/cardrightcss.css"
-import "./css/cardleftcss.css"
-import CardLeft from './Components/CardLeft.jsx'
+import "./css/cardcss.css"
+
 
 createRoot(document.getElementById('root')).render(
   // UPDATE 28-9-2024, Disable strict mode because strict always render twice
