@@ -3,6 +3,7 @@ import CardLeft from "./Components/CardLeft";
 import CardRight from "./Components/CardRight";
 import Header from "./Components/Header";
 import { GET_TOP_ANIME } from "./Controllers/GET_TOP_ANIME";
+import Loading from "./Components/Loading";
 
 function App() {
   // Anime ID
@@ -25,7 +26,7 @@ function App() {
 
     const data1 = await GET_TOP_ANIME();
     const data2 = await GET_TOP_ANIME();
-    
+
     if (data1) {
       setAnimePopularityList1(data1);
       setAnimePopularityList2(data2);
@@ -48,7 +49,7 @@ function App() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
@@ -60,13 +61,14 @@ function App() {
 
         Then the ${hoveredCard === "left" ? "hovered" : ""} will check if its right or left
         hence apply the .hovered class to it */}
-        
+
         <span
           className={`left-body ${hoveredCard === "left" ? "hovered" : ""}`}
           onMouseEnter={() => setHoveredCard("left")}
           onMouseLeave={() => setHoveredCard(null)}
         >
           <CardLeft
+            members={animeLeftID.members}
             title={animeLeftID.title}
             img={animeLeftID.images.webp.large_image_url}
           />
@@ -77,6 +79,7 @@ function App() {
           onMouseLeave={() => setHoveredCard(null)}
         >
           <CardRight
+            members={animeRightID.members}
             title={animeRightID.title}
             img={animeRightID.images.webp.large_image_url}
           />
