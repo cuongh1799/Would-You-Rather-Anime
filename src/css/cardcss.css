@@ -9,12 +9,12 @@
   width: 100%;
   height: 100%;
 }
-.card-left .card-left-wrapper-image,
+/* .card-left .card-left-wrapper-image,
 .card-right .card-right-wrapper-image {
   position: absolute;
   width: 50%;
   filter: brightness(50%);
-}
+} */
 
 .card-left .card-bg,
 .card-right .card-bg {
@@ -32,6 +32,17 @@
   font-size: 2rem;
   /* display: none; */
   padding-bottom: 1rem;
+}
+
+/* Before */
+.card-left .card-members::before,
+.card-right .card-members::before {
+  content: "";
+  width: 10rem;
+  height: 3rem;
+  background: rgb(255, 255, 255);
+  position: absolute;
+  transition: 0.3s;
 }
 
 .card-left .card-left-wrapper-info,
