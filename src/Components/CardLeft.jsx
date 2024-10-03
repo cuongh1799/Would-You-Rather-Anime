@@ -12,7 +12,7 @@ function CardLeft(props) {
         />
       </div> */}
       <div className="card-left-wrapper-info">
-        <h2 id="nbr" className="card-members">
+        <h2 className="card-members">
           {props.members}
         </h2>
         <img className="card-img" src={props.img} alt="Anime Image" />
