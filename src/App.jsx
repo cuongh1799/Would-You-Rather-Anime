@@ -17,6 +17,9 @@ function App() {
   // Hover state
   const [hoveredCard, setHoveredCard] = useState(null);
 
+  // Revealed state
+  const [revealedCard, setRevealedCard] = useState(null);
+
   // Loading state to wait for async function to finish
   const [loading, setLoading] = useState(true);
 
@@ -63,9 +66,12 @@ function App() {
         hence apply the .hovered class to it */}
 
         <span
-          className={`left-body ${hoveredCard === "left" ? "hovered" : ""}`}
+          className={`left-body ${hoveredCard === "left" ? "hovered" : ""} ${
+            revealedCard === "Yes" ? "revealed" : ""
+          }`}
           onMouseEnter={() => setHoveredCard("left")}
           onMouseLeave={() => setHoveredCard(null)}
+          onClick={() => setRevealedCard("Yes")}
         >
           <CardLeft
             members={animeLeftID.members}
@@ -74,9 +80,12 @@ function App() {
           />
         </span>
         <span
-          className={`right-body ${hoveredCard === "right" ? "hovered" : ""}`}
+          className={`right-body ${hoveredCard === "right" ? "hovered" : ""} ${
+            revealedCard === "Yes" ? "revealed" : ""
+          }`}
           onMouseEnter={() => setHoveredCard("right")}
           onMouseLeave={() => setHoveredCard(null)}
+          onClick={() => setRevealedCard("Yes")}
         >
           <CardRight
             members={animeRightID.members}
