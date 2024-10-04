@@ -30,13 +30,11 @@ function App() {
     const data1 = await GET_TOP_ANIME();
     const data2 = await GET_TOP_ANIME();
 
-    if (data1) {
+    if (data1 && data2) {
       setAnimePopularityList1(data1);
       setAnimePopularityList2(data2);
       const randomIndex1 = Math.floor(Math.random() * data1.length);
       const randomIndex2 = Math.floor(Math.random() * data2.length);
-
-      // Set Anime ID
       setAnimeLeftID(data1[randomIndex1]);
       setAnimeRightID(data2[randomIndex2]);
     } else {
@@ -51,6 +49,18 @@ function App() {
     fetchData();
   }, []);
 
+  // Reset the data after choosing the card
+  useEffect(() => {
+    if (revealedCard) {
+      const timer = setTimeout(() => {
+        setRevealedCard(null);
+        fetchData(); // Fetch new data after resetting
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [revealedCard]);
+
+  // Loading screen incase the fetching is not finish
   if (loading) {
     return <Loading />;
   }
