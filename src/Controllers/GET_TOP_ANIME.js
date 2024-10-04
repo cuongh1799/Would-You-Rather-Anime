@@ -1,7 +1,7 @@
 import axios from "axios";
 
 function randomPage() {
-  const choose = Math.floor(Math.random() * 10 + 1);
+  const choose = Math.floor(Math.random() * 15 + 1);
   return choose;
 }
 
