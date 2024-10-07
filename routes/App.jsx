@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import CardLeft from "./Components/CardLeft";
-import CardRight from "./Components/CardRight";
-import Header from "./Components/Header";
-import { GET_TOP_ANIME } from "./Controllers/GET_TOP_ANIME";
-import Loading from "./Components/Loading";
+import CardLeft from "../src/Components/CardLeft";
+import CardRight from "../src/Components/CardRight";
+import Header from "../src/Components/Header";
+import { GET_TOP_ANIME } from "../src/Controllers/GET_TOP_ANIME";
+import Loading from "../src/Components/Loading";
+import { Outlet } from "react-router-dom";
 
 function App() {
   // Anime ID
@@ -22,6 +23,10 @@ function App() {
 
   // Loading state to wait for async function to finish
   const [loading, setLoading] = useState(true);
+
+  // Number formatter
+  // https://www.basedash.com/blog/how-to-format-a-number-with-commas-in-javascript
+  const formatter = new Intl.NumberFormat("en-US");
 
   const fetchData = async () => {
     // Start Loading
@@ -62,12 +67,16 @@ function App() {
 
   // Loading screen incase the fetching is not finish
   if (loading) {
-    return <Loading />;
+    return (
+      <div className="body">
+        <Loading />
+      </div>
+    );
   }
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <div className="body">
         {/* Basically, when the cursor enters the body area, it sets hoveredCard 
         to either left or right 
@@ -84,7 +93,7 @@ function App() {
           onClick={() => setRevealedCard("Yes")}
         >
           <CardLeft
-            members={animeLeftID.members}
+            members={formatter.format(animeLeftID.members)}
             title={animeLeftID.title}
             img={animeLeftID.images.webp.large_image_url}
           />
@@ -98,11 +107,12 @@ function App() {
           onClick={() => setRevealedCard("Yes")}
         >
           <CardRight
-            members={animeRightID.members}
+            members={formatter.format(animeRightID.members)}
             title={animeRightID.title}
             img={animeRightID.images.webp.large_image_url}
           />
         </span>
+        {/* <Outlet/> */}
       </div>
     </>
   );
