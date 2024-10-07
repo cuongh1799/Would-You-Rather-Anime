@@ -12,7 +12,7 @@ function CardLeft(props) {
         />
       </div> */}
       <div className="card-left-wrapper-info">
-        <h2 className="card-members">
+        <h2 className="card-members">Total members:{" "}
           {props.members}
         </h2>
         <img className="card-img" src={props.img} alt="Anime Image" />
@@ -24,7 +24,7 @@ function CardLeft(props) {
 }
 
 CardLeft.propTypes = {
-  members: propTypes.number,
+  members: propTypes.string,
   title: propTypes.string,
   img: propTypes.string,
   desc: propTypes.string,

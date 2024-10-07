@@ -38,7 +38,7 @@
 .card-left .card-members::before,
 .card-right .card-members::before {
   content: "";
-  width: 10rem;
+  width: 35rem;
   height: 3rem;
   background: rgb(255, 255, 255);
   position: absolute;

@@ -3,8 +3,7 @@ import propTypes from "prop-types";
 
 function CardRight(props) {
   return (
-    <div
-      className="card-right">
+    <div className="card-right">
       {/* <div className="card-right-wrapper-image">
         <img
           className="card-bg"
@@ -12,9 +11,7 @@ function CardRight(props) {
         />
       </div> */}
       <div className="card-right-wrapper-info">
-        <h2 className="card-members">
-          {props.members}
-        </h2>
+        <h2 className="card-members">Total members:{" "}{props.members}</h2>
         <img className="card-img" src={props.img} alt="Anime Image" />
         <h2 className="card-title">{props.title}</h2>
         <p className="card-description">{props.desc}</p>
@@ -24,7 +21,7 @@ function CardRight(props) {
 }
 
 CardRight.propTypes = {
-  members: propTypes.number,
+  members: propTypes.string,
   title: propTypes.string,
   img: propTypes.string,
   desc: propTypes.string,
