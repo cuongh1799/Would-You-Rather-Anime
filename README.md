@@ -1,8 +1,14 @@
-# React + Vite
+# Would You Rather Anime Version
+## Backend leaderboard and profile is being work on :)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Would you rather Anime version was inspired by the tradtional "Would you prefer" web game.
 
-Currently, two official plugins are available:
+The project was built by me using Vite, ReactJS, alot of CSS and some javascript for fetching from Jikan API :)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can check how this work on this repository!
+
+# Some of footages of the app
+![image](https://github.com/user-attachments/assets/bf5944b5-1408-4d01-b5f5-3258985630dd)
+
+![image](https://github.com/user-attachments/assets/f55be105-9867-4f4d-bc16-3f43067b820a)
+
