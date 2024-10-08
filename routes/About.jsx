@@ -5,8 +5,7 @@ function About() {
   return (
     <>
       <div className="about-body">
-        <div className="banner-wrapper">
-          <img className="banner" src={banner} />
+        <div className="banner-wrapper1">
           <div className="about-info">
             <h1 className="about-title">Would You Rather Anime Version</h1>
             <p className="about-description">
@@ -19,10 +18,7 @@ function About() {
             </p>
           </div>
         </div>
-      </div>
-      <div className="about-stacks">
-        <div className="banner-wrapper">
-          <img className="banner" src={banner2} />
+        <div className="banner-wrapper2">
           <div className="about-info">
             <h1 className="about-title">Tech Stacks</h1>
           </div>
