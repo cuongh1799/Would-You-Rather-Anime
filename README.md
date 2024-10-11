@@ -1,5 +1,6 @@
 # Would You Rather Anime Version
 ## Backend leaderboard and profile is being work on :)
+you can see the "documentation" on the progress of making this [in this doc](https://docs.google.com/document/d/1fXBUrXlBECr2W1NgQMYKjcNW3FlaqaqgHOlD_TypLGY/edit?usp=sharing) :)
 
 Would you rather Anime version was inspired by the tradtional "Would you prefer" web game.
 
