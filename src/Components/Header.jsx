@@ -9,9 +9,10 @@ function Header() {
         </a>
         <nav className="nav-bar">
           <Link to="/Play"className="header-nav">Play</Link>
-          {/* <a className="header-nav">Home</a> */}
           <Link to="/"className="header-nav">Home</Link>
-          <a className="header-nav">Profile</a>
+          <span className="header-login">
+            <div className="header-login-content">Log in</div>
+          </span>
         </nav>
       </header>
       <Outlet />
