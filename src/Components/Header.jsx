@@ -10,9 +10,9 @@ function Header() {
         <nav className="nav-bar">
           <Link to="/Play"className="header-nav">Play</Link>
           <Link to="/"className="header-nav">Home</Link>
-          <span className="header-login">
+          <Link to="/login" className="header-login">
             <div className="header-login-content">Log in</div>
-          </span>
+          </Link>
         </nav>
       </header>
       <Outlet />

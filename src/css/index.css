@@ -49,10 +49,11 @@ body {
   width: 6rem;
   height: 3rem; /* Set a height for better vertical centering */
   border-radius: 15px;
+  text-decoration: none;
   transition: 0.3s ease;
 }
 
-.header-login:hover{
+.header-login:hover {
   background-color: rgb(39, 38, 38);
   color: #ffdb29;
   cursor: pointer;
@@ -63,7 +64,6 @@ body {
   position: relative;
   font-size: 1.5rem;
   font-weight: 600;
-  text-decoration: none;
 }
 
 .body {
@@ -187,7 +187,7 @@ body {
   transition: 0.3s ease-out;
 }
 
-.about-link:hover{
+.about-link:hover {
   background-color: rgba(0, 0, 0, 0.556);
   color: white;
 }
@@ -244,4 +244,39 @@ body {
   background-color: rgba(255, 255, 255, 0.49);
   margin-right: 2rem;
   border-radius: 25px;
+}
+
+.banner-login {
+  display: flex;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url("/public/banner.jpg");
+  height: 100vh;
+  width: auto;
+  background-repeat: no-repeat;
+  /* padding: 20rem 6rem; */
+  color: white;
+  font-size: 30px;
+  background-size: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-area{
+  background-color: rgba(0, 0, 0, 0.747);
+  width: 30em;
+  height: 20em;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 30px;
+  border: 3rem;
+  display: flex;
+}
+
+#email{
+  /* height: 2rem; */
+  font-size: 1.3rem;
+}
+
+#password{
+  font-size: 1.3rem;
 }
