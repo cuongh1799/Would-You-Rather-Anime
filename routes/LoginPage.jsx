@@ -29,7 +29,7 @@ function LoginPage() {
         );
       // Assuming the response contains a token
       // localStorage.setItem("token", response.accessToken);
-      console.log(response);
+      console.log(response.data);
       history.push("/About");
     } catch (err) {
       setError("Invalid email or password");
