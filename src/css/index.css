@@ -272,11 +272,9 @@ body {
   display: flex;
 }
 
-#email{
+#email , #password, #submit{
   /* height: 2rem; */
   font-size: 1.3rem;
 }
 
-#password{
-  font-size: 1.3rem;
-}
+
