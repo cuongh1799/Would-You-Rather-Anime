@@ -28,7 +28,7 @@ function LoginPage() {
           }
         );
       // Assuming the response contains a token
-      localStorage.setItem("token", response.data.accessToken);
+      localStorage.setItem("token", response.accessToken);
       history.push("/About");
     } catch (err) {
       setError("Invalid email or password");
