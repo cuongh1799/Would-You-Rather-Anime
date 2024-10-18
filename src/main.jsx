@@ -7,6 +7,7 @@ import Header from "./Components/Header.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import About from "../routes/About.jsx";
 import { AnimatePresence, motion } from "framer-motion";
+import LoginPage from "../routes/LoginPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         ),
       },
     ],
+  },
+  {
+    path: "/Login",
+    element: <LoginPage />,
   },
 ]);
 
