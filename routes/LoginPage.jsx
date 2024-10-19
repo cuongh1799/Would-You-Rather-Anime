@@ -14,19 +14,13 @@ function LoginPage() {
 
     try {
       console.log(email + " and " + password);
-      const response = await axios
-        .post("https://backend-gamma-blush-12.vercel.app/api/login", {
+      const response = await axios.post(
+        "https://backend-gamma-blush-12.vercel.app/api/login",
+        {
           email,
           password,
-        })
-        .then(
-          (response) => {
-            console.log("Success!");
-          },
-          (error) => {
-            console.log("Failed! " + error);
-          }
-        );
+        }
+      );
       // Assuming the response contains a token
       // localStorage.setItem("token", response.accessToken);
       console.log(response.data);
