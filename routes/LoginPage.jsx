@@ -6,7 +6,7 @@ function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,10 +21,10 @@ function LoginPage() {
           password,
         }
       );
-      // Assuming the response contains a token
-      // localStorage.setItem("token", response.accessToken);
+      // set cookie token
+      localStorage.setItem("token", response.accessToken);
       console.log(response.data);
-      history.push("/About");
+      navigate("/about");
     } catch (err) {
       setError("Invalid email or password");
       console.log(err);
