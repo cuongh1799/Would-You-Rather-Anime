@@ -7,7 +7,7 @@ function Header() {
   // Check Token
   useEffect(() => {
     const checkToken = localStorage.getItem("token");
-    if (checkToken === undefined) {
+    if (!checkToken || checkToken === undefined) {
       setLogInState(false);
     } else setLogInState(true);
   }, []);
