@@ -24,7 +24,9 @@ function LoginPage() {
       // set cookie token
       localStorage.setItem("token", response.accessToken);
       console.log(response.data);
-      navigate("/about");
+
+      // navigate to homepage
+      navigate("/");
     } catch (err) {
       setError("Invalid email or password");
       console.log(err);
