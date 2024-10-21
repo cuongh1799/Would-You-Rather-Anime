@@ -22,7 +22,7 @@ function LoginPage() {
         }
       );
       // set cookie token
-      localStorage.setItem("token", response.accessToken);
+      localStorage.setItem("token", response.data.accessToken);
       console.log(response.data);
 
       // navigate to homepage
